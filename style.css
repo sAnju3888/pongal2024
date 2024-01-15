@@ -1,0 +1,120 @@
+html, body{
+    height: 100%;
+    width:100%;
+    overflow: hidden;
+    margin: 0;
+  }
+  
+  .sky{
+    position: relative;
+  }
+  
+  .sky{
+    height: 50%;
+    background: skyblue;
+  }
+
+
+.cloud{
+    position:absolute;
+
+}
+#posd p {
+    text-align: center;
+}
+#posd span {
+    display: block; /* Make the span a block-level element */
+    margin: 0 auto; /* Center the span horizontally */
+}
+
+.ground{
+    background-color: #8B4513; 
+    height:40%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em;
+    margin-bottom:1em;
+    
+}
+
+.gif_p{
+  border:5px solid black;
+  position: absolute;
+ border-radius: 6%;
+scale:1.5;
+width: 8%; /* Make the GIF fill the container width */
+height: auto; /* Maintain the aspect ratio */
+
+
+}
+
+@media screen and (max-width: 600px) {
+  .gif_p{
+    border:20px solid black;
+    position: absolute;
+   scale:1;
+   top:2em;
+   border-radius: 6%;
+   width: 300px;
+  }
+    
+}
+
+
+.sun {
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    
+    border-radius:50%;
+    height:200px;
+    width:200px;
+    background:orange;
+    box-shadow: 0 0 10px orange,
+                  0 0 60px orange,
+                  0 0 200px yellow,
+                  inset 0 0 80px yellow;    
+    z-index:-99;
+    
+    animation: sun_move 200s linear infinite alternate;
+    
+  }
+  .cloud:nth-child(1){
+    width:200px;
+    top:100px;
+    opacity:0.5;
+    animation: wind 60s linear infinite reverse;
+
+}
+.cloud:nth-child(2){
+    width:300px;
+    top:0;
+    animation:wind 40s linear infinite normal;
+}
+
+@keyframes wind{
+    from{left:-300px}
+    to{left:100%}
+}
+@keyframes sun_move{
+    from{transform:translateY(-100px);
+        background-color: red;
+        filter: brightness(75%);
+    }
+    to{
+        transform:translateY(70px);
+        background-color: orange;
+    }
+
+}
+
+
+
